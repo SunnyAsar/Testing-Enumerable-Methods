@@ -14,4 +14,16 @@ RSpec.describe Enumerable do
       expect(array.my_all? { |i| i > 10 }).to eql(false)
     end
   end
+
+  describe '#my_any' do
+    it 'take an array and checks if any match requirement' do
+      expect(array.my_any? { |i| i < 3 }).to eql(true)
+    end
+  end
+
+  describe '#my_none' do
+    it 'takes an array,checks than none match the rule' do
+      expect(array.none? { |i| i > 4 }).to eql(false)
+    end
+  end
 end
