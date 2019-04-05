@@ -1,6 +1,5 @@
+# main tests
 require './bin/main.rb'
-# require_relative './bin/main.rb'
-
 RSpec.describe Enumerable do
   array = [1, 2, 3, 4, 5]
   describe '#my_each' do
@@ -39,7 +38,7 @@ RSpec.describe Enumerable do
 
   describe 'my_map' do
     it 'takes and array and transforms based on block provided' do
-      expect(array.my_map { |i| i += 1 }).to eql([2, 3, 4, 5, 6])
+      expect(array.my_map { |i| i + 1 }).to eql([2, 3, 4, 5, 6])
     end
   end
 end
