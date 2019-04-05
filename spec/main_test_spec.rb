@@ -26,4 +26,20 @@ RSpec.describe Enumerable do
       expect(array.none? { |i| i > 4 }).to eql(false)
     end
   end
+
+  context '#my_count' do
+    it 'takes nothing and returns the full array length' do
+      expect(array.my_count).to eql(5)
+    end
+
+    it 'takes an array and return count of items that match it' do
+      expect(array.my_count { |i| i > 4 }).to eql(1)
+    end
+  end
+
+  describe 'my_map' do
+    it 'takes and array and transforms based on block provided' do
+      expect(array.my_map { |i| i += 1 }).to eql([2, 3, 4, 5, 6])
+    end
+  end
 end
