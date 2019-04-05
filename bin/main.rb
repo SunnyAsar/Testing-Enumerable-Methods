@@ -19,7 +19,6 @@ module Enumerable
     new_array
   end
 
-  
   def my_all?()
     self.each do |i|
      res = yield(i)
