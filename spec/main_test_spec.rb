@@ -1,7 +1,7 @@
 # main tests
 require './bin/main.rb'
 RSpec.describe Enumerable do
-  array = [1, 2, 3, 4, 5]
+  let(:array){[1, 2, 3, 4, 5]}
   describe '#my_each' do
     it 'takes an array of items and returns them individually' do
       expect(array.my_each { |i| i }).to eql(array)
@@ -26,11 +26,13 @@ RSpec.describe Enumerable do
     end
   end
 
-  context '#my_count' do
+  context '#my_count return 5' do
     it 'takes nothing and returns the full array length' do
       expect(array.my_count).to eql(5)
     end
+  end
 
+  context '#my_count return 1' do
     it 'takes an array and return count of items that match it' do
       expect(array.my_count { |i| i > 4 }).to eql(1)
     end
